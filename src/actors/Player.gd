@@ -45,6 +45,5 @@ func casting():
 	var direction = staff.global_position.direction_to(target).normalized()
 	emit_signal("player_spelling_fireball", spell_instance, staff.global_position, direction)
 
-
 func _on_body_entered(body: Node) -> void:
 	queue_free()
