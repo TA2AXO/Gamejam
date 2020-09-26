@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Actor",
 "language": "GDScript",
 "path": "res://src/actors/Actor.gd"
+}, {
+"base": "Area2D",
+"class": "Fireball",
+"language": "GDScript",
+"path": "res://src/Attacks/Fireball.gd"
 } ]
 _global_script_class_icons={
-"Actor": ""
+"Actor": "",
+"Fireball": ""
 }
 
 [application]

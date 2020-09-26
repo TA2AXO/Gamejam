@@ -27,8 +27,11 @@ shape = SubResource( 1 )
 position = Vector2( 0, -128.378 )
 current = true
 
-[node name="Position2D" type="Position2D" parent="."]
+[node name="Staff" type="Position2D" parent="."]
 position = Vector2( 47, -24.378 )
+
+[node name="SpellDirection" type="Position2D" parent="."]
+position = Vector2( 67, -24.378 )
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 2

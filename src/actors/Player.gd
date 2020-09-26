@@ -1,9 +1,11 @@
 extends Actor
 
-
+signal player_spelling_fireball(Fireboll, position, direction)
 export (PackedScene) var Fireboll
 
-onready var staff = $Position2D
+onready var health: = 100.0
+onready var staff = $Staff
+onready var spell_direction = $SpellDirection
 
 func _physics_process(delta: float) -> void:
 	var direction: = get_direction()
@@ -35,16 +37,13 @@ func calculate_move_velocity(
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("attack"):
-		spell()
-	
+		casting()
 
-func spell():
+func casting():
 	var spell_instance  = Fireboll.instance()
-	add_child(spell_instance)
-	spell_instance.global_position = staff.global_position
 	var target = get_global_mouse_position()
-	var direction_to_mouse = spell_instance.global_position.direction_to(target).normalized()
-	spell_instance.set_direction(direction_to_mouse)
+	var direction = staff.global_position.direction_to(target).normalized()
+	emit_signal("player_spelling_fireball", spell_instance, staff.global_position, direction)
 
 
 func _on_body_entered(body: Node) -> void:

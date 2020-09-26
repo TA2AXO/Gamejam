@@ -7,7 +7,6 @@
 radius = 40.0
 
 [node name="Fireball" type="Area2D"]
-monitorable = false
 collision_layer = 16
 collision_mask = 2
 script = ExtResource( 3 )
