@@ -24,10 +24,10 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.470588 )
 
 [node name="Label" parent="PauseOverlay" instance=ExtResource( 3 )]
-margin_left = -58.5
-margin_top = -87.0
-margin_right = 58.5
-margin_bottom = -56.0
+margin_left = -44.0
+margin_top = -96.0
+margin_right = 73.0
+margin_bottom = -65.0
 text = "Durduruldu"
 
 [node name="PauseMenu" type="VBoxContainer" parent="PauseOverlay"]
@@ -43,12 +43,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayButton2" parent="PauseOverlay/PauseMenu" instance=ExtResource( 2 )]
+[node name="RetryButton2" parent="PauseOverlay/PauseMenu" instance=ExtResource( 2 )]
 margin_right = 196.0
 margin_bottom = 47.0
 text = "Yeniden Dene"
 
-[node name="PlayButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 1 )]
+[node name="MainMenuButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 1 )]
 margin_top = 51.0
 margin_right = 196.0
 margin_bottom = 98.0

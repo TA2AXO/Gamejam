@@ -32,11 +32,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
+PlayerData="*res://src/autoload/PlayerData.tscn"
 Fallowing="*res://src/autoload/fallowing.gd"
-
-[display]
-
-window/size/fullscreen=true
 
 [input]
 

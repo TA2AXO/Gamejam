@@ -60,4 +60,5 @@ func _on_body_entered(body: Node) -> void:
 	$Health.take_damage(21)
 	health -= 21
 	if health <= 0.0:
+		PlayerData.deaths += 1
 		queue_free()
