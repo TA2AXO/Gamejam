@@ -7,11 +7,21 @@ onready var health: = 100.0
 onready var staff = $Staff
 onready var spell_direction = $SpellDirection
 
+func hareket(linear_velocity: Vector2):
+	if linear_velocity.x > 299.0:
+		get_node("AnimatedSprite").flip_h = true
+		$AnimatedSprite.play("default")
+	elif linear_velocity.x < 0.0:
+		get_node("AnimatedSprite").flip_h = false
+		$AnimatedSprite.play("default")
+		
 func _physics_process(delta: float) -> void:
+	hareket(_velocity)
 	var direction: = get_direction()
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
+	
 
 
 func get_direction() -> Vector2:

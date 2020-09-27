@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/patlama3.png" type="Texture" id=1]
+[ext_resource path="res://assets/patlama1.png" type="Texture" id=2]
+[ext_resource path="res://assets/patlama2.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "patlama",
+"speed": 7.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+
+[node name="Blowing" type="Node2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "patlama"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 6 )
+shape = SubResource( 2 )

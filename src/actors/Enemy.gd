@@ -16,7 +16,16 @@ func _on_Area2D_body_entered(body: Node) -> void:
 func _physics_process(delta):
 	_velocity.y += gravity * delta
 	following()
+	hareket(_velocity)
 	move_and_slide(_velocity)
+
+func hareket(linear_velocity: Vector2):
+	if linear_velocity.x > 250.0:
+		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.play("default")
+	elif linear_velocity.x < 0.0:
+		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.play("default")
 
 func following():
 	if player != null:
@@ -42,13 +51,10 @@ func _on_screen_exited() -> void:
 	pass # Replace with function body.
 
 
-
-
 func _on_area_shape_entered(area_id: int, area: Area2D, area_shape: int, self_shape: int) -> void:
 	queue_free()
 
 func handle_hit():
 	health -= 20
-	print("yanıyor ibina", health) 
 	if health <= 0:
 		queue_free()

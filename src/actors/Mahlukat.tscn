@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/mahlukat3.png" type="Texture" id=1]
+[ext_resource path="res://assets/mahlukat.png" type="Texture" id=2]
+[ext_resource path="res://assets/mahlukat1.png" type="Texture" id=3]
+[ext_resource path="res://assets/mahlukat2.png" type="Texture" id=4]
+[ext_resource path="res://src/actors/Mahlukat.gd" type="Script" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 26.1987, 23.8002 )
+
+[node name="Mahlukat" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 25
+script = ExtResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 0.33371 )
+frames = SubResource( 1 )
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 8.00903, 10.6787 )
+shape = SubResource( 2 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 9.51074, 10.8456 )
+scale = Vector2( 2.35152, 2.08456 )
+process_parent = true
+physics_process_parent = true
+[connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_screen_exited"]
