@@ -29,6 +29,7 @@ func on_timeout_complete():
 func _on_Fireball_body_entered(body: Node) -> void:
 	$AnimatedSprite.visible = true
 	$AnimatedSprite.play("default")
+	$AudioStreamPlayer2D.play(0.65)
 	if body.has_method("handle_hit"):
 		body.handle_hit()
 	timer.start()

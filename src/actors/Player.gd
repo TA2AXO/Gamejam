@@ -4,6 +4,7 @@ signal player_spelling_fireball(Fireboll, position, direction)
 export (PackedScene) var Fireboll
 
 onready var health: = 100.0
+onready var mana: = 100.0
 onready var staff = $Staff
 onready var spell_direction = $SpellDirection
 
@@ -14,15 +15,17 @@ func hareket(linear_velocity: Vector2):
 	elif linear_velocity.x < 0.0:
 		get_node("AnimatedSprite").flip_h = false
 		$AnimatedSprite.play("default")
-		
+
 func _physics_process(delta: float) -> void:
 	hareket(_velocity)
 	var direction: = get_direction()
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
+	if Input.is_action_just_released("attack"):
+		if mana > 0:
+			casting()
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 	
-
 
 func get_direction() -> Vector2:
 	return Vector2(
@@ -45,15 +48,16 @@ func calculate_move_velocity(
 		out.y = 0.0
 	return out
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_released("attack"):
-		casting()
-
 func casting():
+	$Mana.casting_spell(3)
+	mana -= 3
 	var spell_instance  = Fireboll.instance()
 	var target = get_global_mouse_position()
 	var direction = staff.global_position.direction_to(target).normalized()
 	emit_signal("player_spelling_fireball", spell_instance, staff.global_position, direction)
 
 func _on_body_entered(body: Node) -> void:
-	queue_free()
+	$Health.take_damage(21)
+	health -= 21
+	if health <= 0.0:
+		queue_free()

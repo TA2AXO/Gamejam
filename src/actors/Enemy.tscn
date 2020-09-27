@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/ghost_enemy.png" type="Texture" id=3]
 [ext_resource path="res://assets/ghost_enemy1.png" type="Texture" id=4]
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
@@ -13,14 +13,14 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 30.4161, 22.6695 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 26.0071, 11.0954 )
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 337.295
+radius = 608.874
 
 [node name="Enemy" type="KinematicBody2D"]
 position = Vector2( 0, -47.622 )
@@ -30,12 +30,12 @@ script = ExtResource( 1 )
 speed = Vector2( 300, 750 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 5 )
+frames = SubResource( 1 )
 frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.737556, 17.9368 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
 position = Vector2( -1.05396, 2.51983 )
@@ -53,7 +53,6 @@ position = Vector2( -1.05326, 39.3986 )
 shape = SubResource( 3 )
 
 [node name="Area2D2" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]

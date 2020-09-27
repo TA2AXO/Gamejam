@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/Objects/ManaBar.gd" type="Script" id=1]
+[ext_resource path="res://assets/manabos.png" type="Texture" id=2]
+[ext_resource path="res://assets/manadolu.png" type="Texture" id=3]
+[ext_resource path="res://src/Objects/ManaDoluluk.gd" type="Script" id=4]
+
+[node name="ManaBar" type="HBoxContainer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -257.0
+margin_top = 2.0
+margin_right = -1.0
+margin_bottom = 66.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ManaDoluluk" type="TextureProgress" parent="."]
+margin_right = 256.0
+margin_bottom = 64.0
+value = 50.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
+script = ExtResource( 4 )
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="maximum_changed" from="." to="ManaDoluluk" method="_on_ManaBar_maximum_changed"]
