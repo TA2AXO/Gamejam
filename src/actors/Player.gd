@@ -8,6 +8,7 @@ onready var mana: = 100.0
 onready var staff = $Staff
 onready var spell_direction = $SpellDirection
 
+
 func hareket(linear_velocity: Vector2):
 	if linear_velocity.x > 299.0:
 		get_node("AnimatedSprite").flip_h = true
@@ -25,7 +26,7 @@ func _physics_process(delta: float) -> void:
 			casting()
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
-	
+
 
 func get_direction() -> Vector2:
 	return Vector2(

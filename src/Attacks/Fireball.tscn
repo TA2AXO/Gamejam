@@ -40,7 +40,7 @@ animations = [ {
 collision_layer = 16
 collision_mask = 10
 script = ExtResource( 3 )
-speed = 5
+speed = 10
 
 [node name="enemy" type="Sprite" parent="."]
 position = Vector2( 0, -8 )
