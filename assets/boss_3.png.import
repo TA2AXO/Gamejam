@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ibne_buyucu2.png-053bd123b22e904d3790e14039179be6.stex"
+path="res://.import/boss_3.png-76514e3a1d567e3287b0f72589ba83c7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ibne_buyucu2.png"
-dest_files=[ "res://.import/ibne_buyucu2.png-053bd123b22e904d3790e14039179be6.stex" ]
+source_file="res://assets/boss_3.png"
+dest_files=[ "res://.import/boss_3.png-76514e3a1d567e3287b0f72589ba83c7.stex" ]
 
 [params]
 

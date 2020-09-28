@@ -1,48 +1,45 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://src/actors/Boss.gd" type="Script" id=1]
-[ext_resource path="res://assets/boss_1.png" type="Texture" id=2]
-[ext_resource path="res://assets/boss_4.png" type="Texture" id=3]
-[ext_resource path="res://assets/boss_5.png" type="Texture" id=4]
-[ext_resource path="res://assets/boss_3.png" type="Texture" id=5]
-[ext_resource path="res://assets/boss_2.png" type="Texture" id=6]
-[ext_resource path="res://src/Screens/EndScreen.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/actors/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://assets/ghost_enemy2.png" type="Texture" id=2]
+[ext_resource path="res://assets/ghost_enemy.png" type="Texture" id=3]
+[ext_resource path="res://assets/ghost_enemy1.png" type="Texture" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 40.1872, 45.9689 )
+extents = Vector2( 30.4161, 22.6695 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 26.0071, 11.0954 )
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 1057.83
+radius = 480.049
 
 [node name="Enemy" type="KinematicBody2D"]
 position = Vector2( 0, -47.622 )
 collision_layer = 2
 collision_mask = 25
 script = ExtResource( 1 )
-end_scene = ExtResource( 7 )
+speed = Vector2( 300, 750 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -0.841846, 0.84185 )
 frames = SubResource( 1 )
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -10.0814, -2.08579 )
+position = Vector2( -0.737556, 17.9368 )
 shape = SubResource( 2 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-position = Vector2( -10.5647, -5.82292 )
-scale = Vector2( 3.5698, 3.95754 )
+position = Vector2( -1.05396, 2.51983 )
+scale = Vector2( 2.61873, 3.12326 )
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -52,12 +49,10 @@ collision_layer = 2
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-position = Vector2( -10.3136, 35.47 )
+position = Vector2( -1.05326, 39.3986 )
 shape = SubResource( 3 )
 
 [node name="Area2D2" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]

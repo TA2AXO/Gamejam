@@ -25,11 +25,11 @@ __meta__ = {
 }
 
 [node name="Label" parent="." instance=ExtResource( 7 )]
-margin_left = -115.0
-margin_top = -72.0
-margin_right = 135.0
-margin_bottom = -41.0
-text = "Tebrikler oyunu bitirdiniz..."
+margin_left = -246.0
+margin_top = -68.0
+margin_right = 269.0
+margin_bottom = -37.0
+text = "Tebrikler, kayıp anılarını geri kazanarak oyunu bitirdin."
 
 [node name="Menu" type="VBoxContainer" parent="."]
 anchor_left = 0.5

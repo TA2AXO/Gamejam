@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/actors/Mahlukat.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Sounds/atmosfer.wav" type="AudioStream" id=15]
 [ext_resource path="res://Sounds/atmosfer_davul.wav" type="AudioStream" id=16]
 [ext_resource path="res://assets/zindan_duvar_reis_1.png" type="Texture" id=17]
+[ext_resource path="res://src/actors/Boss.tscn" type="PackedScene" id=18]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -491,12 +492,6 @@ position = Vector2( -0.136444, 0.4039 )
 scale = Vector2( 1.16113, 1.04797 )
 texture = ExtResource( 9 )
 
-[node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2222.55, 439.729 )
-
-[node name="Enemy2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3261, 347 )
-
 [node name="SpellManager" type="Node2D" parent="."]
 script = ExtResource( 7 )
 
@@ -517,6 +512,15 @@ position = Vector2( 4818, 510 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource( 11 )]
+
+[node name="Enemy" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2233, 485 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 3044, 454 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5596, 463 )
 [connection signal="finished" from="Giris" to="." method="_on_Giri_finished"]
 [connection signal="finished" from="Gecis" to="." method="_on_Gecis_finished"]
 [connection signal="health_changed" from="Player/Health" to="PlayerDynamics/Interface" method="_on_health_changed"]
