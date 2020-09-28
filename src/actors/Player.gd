@@ -3,8 +3,8 @@ extends Actor
 signal player_spelling_fireball(Fireboll, position, direction)
 export (PackedScene) var Fireboll
 
-onready var health: = 100.0
-onready var mana: = 100.0
+onready var health: = 200.0
+onready var mana: = 150.0
 onready var staff = $Staff
 onready var spell_direction = $SpellDirection
 

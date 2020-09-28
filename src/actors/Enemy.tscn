@@ -47,12 +47,12 @@ scale = Vector2( 3.5698, 3.95754 )
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 position = Vector2( 0, -57.6043 )
 collision_layer = 2
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2( -10.3136, 35.47 )
 shape = SubResource( 3 )
 

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/yasl_amca.wav-6f51ae614aa8d860aeaba395109b8e21.sample"
+
+[deps]
+
+source_file="res://Sounds/yasl_amca.wav"
+dest_files=[ "res://.import/yasl_amca.wav-6f51ae614aa8d860aeaba395109b8e21.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

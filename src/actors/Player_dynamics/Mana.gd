@@ -4,7 +4,7 @@ signal mana_changed(mana)
 signal mana_depleted
 
 var mana = 0
-export(int) var max_mana = 100
+export(int) var max_mana = 150
 
 func _ready():
 	mana = max_mana
